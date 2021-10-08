@@ -30,7 +30,7 @@ func main(){
 	}
 
 	problems:=parseLines(lines)
-
+	correct:=0
 	for i,p:=range problems{
 		fmt.Printf("Problem #%d: %s = \n",i+1,p.q)
 		var answer string
@@ -39,12 +39,15 @@ func main(){
 		//check if correct
 		if(answer==p.a){
 			fmt.Println("Correct")
+			correct++
 		}else{
 			fmt.Println("Wrong")
 		}
 	}
 	
 	// fmt.Println(problems)
+	//To print score
+	fmt.Printf("You scored %d out of %d. \n",correct,len(problems))
 }
 
 func parseLines(lines[][] string)[]quiz{
